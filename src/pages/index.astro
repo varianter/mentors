@@ -1,81 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import GraduationIcon from "../components/GraduationIcon.astro";
+import Typewriter from "../components/Typewriter";
+import Layout from "../layouts/Layout.astro";
+
+const allTopics = await Astro.glob("./topic/*.md");
+const shortTopics = allTopics.map(t => ({
+  url: t.url,
+  title: t.frontmatter.title,
+}));
+const topics = allTopics.map(t => t.frontmatter.title);
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="What to learn.">
+  <main class="flex max-w-lg self-center w-full">
+    <div class="w-full">
+      <h1 class="font-gloock text-4xl font-bold text-center my-4 block">
+        What to learn?
+      </h1>
+
+      <div
+        class="rounded-full flex items-center shadow-2xl py-3 px-7 shadow-zinc-400 m-4"
+      >
+        <div class="flex-1"><Typewriter topics={topics} /></div>
+        <button
+          class="js-random rounded-full px-2 py-2 bg-gradient-to-r text-white transition duration-200 from-indigo-500 to-pink-500 hover:hue-rotate-30 active:-hue-rotate-30 active:scale-90 w-9 h-9 block"
+        >
+          <GraduationIcon
+            className=" block max-w-full max-h-full aspect-square fill-current"
+          />
+        </button>
+      </div>
+    </div>
+  </main>
 </Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+<script>
+  // Find all buttons with the `alert` class on the page.
+  const button = document.querySelector("button.js-random");
+  button?.addEventListener("click", () => {
+    alert("Button was clicked!");
+  });
+</script>
