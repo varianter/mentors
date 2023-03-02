@@ -18,7 +18,7 @@ const topicUrls = allTopics.map(t => t.url).filter(Boolean) as string[];
       <div
         class="rounded-full flex items-center shadow-2xl py-3 px-7 shadow-zinc-400 m-4"
       >
-        <div class="flex-1"><Typewriter topics={topics} /></div>
+        <div class="flex-1"><Typewriter client:only topics={topics} /></div>
         <RandomPickButton client:load topicUrls={topicUrls} />
       </div>
 
