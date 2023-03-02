@@ -2,9 +2,10 @@
 title: Remix
 experience: 0
 tags: frontend, frameworks
+layout: ../../layouts/MdxLayout.astro
 ---
 
-# Remix
+## Remix
 
 > Focused on web standards and modern web app UX, you’re simply going to build
 > better websites.

@@ -2,9 +2,10 @@
 title: OpenTelemetry
 experience: 0
 tags: frontend, frameworks
+layout: ../../layouts/MdxLayout.astro
 ---
 
-# OpenTelemetry
+## OpenTelemetry
 
 OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument,
 generate, collect, and export telemetry data (metrics, logs, and traces) to help

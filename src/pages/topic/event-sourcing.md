@@ -2,9 +2,10 @@
 title: EventSourcing
 experience: 0
 tags: frontend, frameworks
+layout: ../../layouts/MdxLayout.astro
 ---
 
-# Event Sourcing
+## Event Sourcing
 
 Event Sourcing ensures that all changes to application state are stored as a
 sequence of events. Not just can we query these events, we can also use the

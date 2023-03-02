@@ -1,34 +1,8 @@
 ---
-import RandomPickButton from "../components/RandomPickButton";
-import Typewriter from "../components/Typewriter";
+import Top from "../components/Top.astro";
 import Layout from "../layouts/Layout.astro";
-
-const allTopics = await Astro.glob("./topic/*.md");
-const topics = allTopics.map(t => t.frontmatter.title);
-const topicUrls = allTopics.map(t => t.url).filter(Boolean) as string[];
 ---
 
-<Layout title="What to learn.">
-  <main class="flex max-w-lg self-center w-full">
-    <div class="w-full">
-      <h1 class="font-gloock text-4xl font-bold text-center my-4 block">
-        What to learn?
-      </h1>
-
-      <div
-        class="rounded-full flex items-center shadow-2xl py-3 px-7 shadow-zinc-400 m-4"
-      >
-        <div class="flex-1"><Typewriter client:only topics={topics} /></div>
-        <RandomPickButton client:load topicUrls={topicUrls} />
-      </div>
-
-      <div class="flex justify-center p-2">
-        <a
-          href="/topic"
-          class="underline hover:no-underline hover:opacity-50 transition"
-          >All topics</a
-        >
-      </div>
-    </div>
-  </main>
+<Layout title="What to learn." class="items-center">
+  <Top />
 </Layout>

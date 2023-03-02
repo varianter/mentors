@@ -2,9 +2,10 @@
 title: Astro
 experience: 0
 tags: frontend, frameworks
+layout: ../../layouts/MdxLayout.astro
 ---
 
-# Astro
+## Astro
 
 > Pull content from anywhere and serve it fast with Astro's next-gen island
 > architecture.
