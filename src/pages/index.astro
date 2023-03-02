@@ -1,14 +1,11 @@
 ---
-import GraduationIcon from "../components/GraduationIcon.astro";
+import RandomPickButton from "../components/RandomPickButton";
 import Typewriter from "../components/Typewriter";
 import Layout from "../layouts/Layout.astro";
 
 const allTopics = await Astro.glob("./topic/*.md");
-const shortTopics = allTopics.map(t => ({
-  url: t.url,
-  title: t.frontmatter.title,
-}));
 const topics = allTopics.map(t => t.frontmatter.title);
+const topicUrls = allTopics.map(t => t.url).filter(Boolean) as string[];
 ---
 
 <Layout title="What to learn.">
@@ -22,22 +19,8 @@ const topics = allTopics.map(t => t.frontmatter.title);
         class="rounded-full flex items-center shadow-2xl py-3 px-7 shadow-zinc-400 m-4"
       >
         <div class="flex-1"><Typewriter topics={topics} /></div>
-        <button
-          class="js-random rounded-full px-2 py-2 bg-gradient-to-r text-white transition duration-200 from-indigo-500 to-pink-500 hover:hue-rotate-30 active:-hue-rotate-30 active:scale-90 w-9 h-9 block"
-        >
-          <GraduationIcon
-            className=" block max-w-full max-h-full aspect-square fill-current"
-          />
-        </button>
+        <RandomPickButton client:load topicUrls={topicUrls} />
       </div>
     </div>
   </main>
 </Layout>
-
-<script>
-  // Find all buttons with the `alert` class on the page.
-  const button = document.querySelector("button.js-random");
-  button?.addEventListener("click", () => {
-    alert("Button was clicked!");
-  });
-</script>

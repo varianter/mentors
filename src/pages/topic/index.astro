@@ -1,0 +1,33 @@
+---
+import type { GetStaticPathsOptions, Page } from "astro";
+
+interface Props {
+  page: Page<TopicPage>;
+}
+
+type TopicPage = {
+  url?: string;
+  title: string;
+};
+const files = await Astro.glob("./*.md");
+const limit = 2;
+const hasNext = files.length > limit;
+
+const pages: TopicPage[] = files.slice(0, limit).map(f => ({
+  url: f.url,
+  title: f.frontmatter.title,
+}));
+---
+
+<h1>Page 1</h1>
+<ul>
+  {
+    pages.map(({ title, url }) => (
+      <li>
+        <a href={url}>{title}</a>
+      </li>
+    ))
+  }
+</ul>
+
+{hasNext ? <a href={`/topic/page/2`}>Next</a> : null}
