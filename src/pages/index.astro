@@ -21,6 +21,14 @@ const topicUrls = allTopics.map(t => t.url).filter(Boolean) as string[];
         <div class="flex-1"><Typewriter topics={topics} /></div>
         <RandomPickButton client:load topicUrls={topicUrls} />
       </div>
+
+      <div class="flex justify-center p-2">
+        <a
+          href="/topic"
+          class="underline hover:no-underline hover:opacity-50 transition"
+          >All topics</a
+        >
+      </div>
     </div>
   </main>
 </Layout>
