@@ -1,14 +1,11 @@
 ---
 import Layout from "./Layout.astro";
-import Top from "../components/Top.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <Top />
-
-  <div class="my-8 prose lg:prose-lg prose-slate">
+  <div class="prose lg:prose-lg prose-slate">
     <slot />
   </div>
 </Layout>

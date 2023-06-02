@@ -4,19 +4,19 @@ import Top from "../../components/Top.astro";
 import Layout from "../../layouts/Layout.astro";
 
 interface Props {
-  page: Page<TopicPage>;
+  page: Page<MentorPage>;
 }
 
-type TopicPage = {
+type MentorPage = {
   url?: string;
-  title: string;
+  name: string;
 };
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const files = await Astro.glob("./*.md");
-  const pages: TopicPage[] = files.map(f => ({
+  const pages: MentorPage[] = files.map(f => ({
     url: f.url,
-    title: f.frontmatter.title,
+    name: f.frontmatter.name,
   }));
   // Generate pages from our array of astronauts, with 2 to a page
   return paginate(pages, { pageSize: 2 });
@@ -30,12 +30,12 @@ const { page } = Astro.props;
 
   <ol>
     {
-      page.data.map(({ title, url }) => (
+      page.data.map(({ name, url }) => (
         <li class="my-10">
           <a
             href={url}
             class="rounded-full flex items-center font-normal rem shadow-2xl py-3 px-7 shadow-zinc-400 m-4 hover:shadow-xl active:shadow-lg active:opacity-50 transition">
-            {title}
+            {name}
           </a>
         </li>
       ))
