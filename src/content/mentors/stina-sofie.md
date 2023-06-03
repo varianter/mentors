@@ -1,5 +1,5 @@
 ---
-name: Mikael
+name: Stina Sofie
 experience: 0
 tags: [design, tjenestedesign]
 layout: ../../layouts/MdxLayout.astro
