@@ -8,4 +8,7 @@ picture: "andersns.png"
 email: "ans@variant.no"
 ---
 
-10+ års erfaring som fullstack utvikler. Mye offentlig sektor.
+Anders har ti års erfaring som utvikler og har kompetanse på teknologiene
+dotnet, React, Angular og mer. Anders har erfaring med nyutvikling og
+vedlikehold av alt fra små applikasjoner til store nasjonale løsninger med høye
+krav til ytelse og oppetid. A
