@@ -3,8 +3,6 @@ name: Sarah
 experience: 0
 tags: [frontend, react, Universell Utforming]
 layout: ../../layouts/MdxLayout.astro
-city: Trondheim
-picture: "sarah.png"
 email: "ss@variant.no"
 ---
 

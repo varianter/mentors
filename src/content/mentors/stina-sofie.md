@@ -3,8 +3,6 @@ name: Stina Sofie
 experience: 0
 tags: [design, tjenestedesign]
 layout: ../../layouts/MdxLayout.astro
-city: Trondheim
-picture: "stina-sofie.png"
 email: "ssm@variant.no"
 ---
 

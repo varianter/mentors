@@ -2,11 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {
-      fontFamily: {
-        gloock: ['"Gloock"', "serif"],
-      },
+    fontFamily: {
+      serif: ["Recoleta", "serif"],
+      sans: ['"Graphik Web"', "system-ui", "sans-serif"],
     },
+    extend: {},
   },
   plugins: [require("@tailwindcss/typography")],
 };

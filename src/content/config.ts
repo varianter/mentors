@@ -5,11 +5,8 @@ import { z, defineCollection } from "astro:content";
 const mentorCollection = defineCollection({
   // type: "content", // v2.5.0 and later
   schema: z.object({
-    name: z.string(),
     tags: z.array(z.string()),
-    city: z.string().optional(),
-    picture: z.string().optional(),
-    email: z.string().optional(),
+    email: z.string(),
   }),
 });
 
