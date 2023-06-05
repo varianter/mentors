@@ -6,7 +6,11 @@ module.exports = {
       serif: ["Recoleta", "serif"],
       sans: ['"Graphik Web"', "system-ui", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit, minmax(25rem, 10fr))",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

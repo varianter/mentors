@@ -15,8 +15,8 @@ const employee = await getEmployee(email);
 
 {
   employee && (
-    <div class="font-sans h-screen w-full flex flex-row justify-center items-center">
-      <div class="card  max-w-96 mx-auto bg-white  shadow-xl hover:shadow">
+    <div class="font-sans w-full flex flex-row justify-center pt-20">
+      <div class="card  max-w-96 mx-auto bg-white flex flex-col shadow-xl hover:shadow">
         <Picture
           src={employee.imageUrl}
           alt={employee.name}
@@ -29,13 +29,13 @@ const employee = await getEmployee(email);
         <div class="text-center mt-2 font-light text-sm">
           <a href={`mailto:${email}`}>{email}</a>
         </div>
-        <div class="px-6 mt-2 font-light text-sm">
+        <div class="px-6 mt-2 font-light text-sm flex-1">
           <Content />
         </div>
         <hr class="mt-8" />
-        <div class="flex p-4">
+        <div class="flex p-4 flex-wrap gap-1">
           {tags.map(tag => (
-            <span class="py-2 px-4 shadow-md no-underline text-white rounded-full bg-blue-600 font-sans font-semibold text-sm border-blue mr-2">
+            <span class="py-2 px-4 shadow-md no-underline text-white rounded-full bg-blue-600 font-sans font-semibold text-sm border-blue">
               {tag}
             </span>
           ))}
