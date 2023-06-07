@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import EmpolyeeCard from "../components/EmpolyeeCard.astro";
 import { shuffle } from "../utils";
+import CategorySelector from "../components/CategorySelector.astro";
 
 const mentors = await getCollection("mentors");
 ---
@@ -18,7 +19,9 @@ const mentors = await getCollection("mentors");
     </p>
   </div>
 
-  <div class="grid gap-8 grid-flow-row grid-cols-fluid my-32 justify-center">
+  <CategorySelector selected="all" />
+
+  <div class="grid gap-8 grid-flow-row grid-cols-fluid my-24 justify-center">
     {
       shuffle(mentors).map(async ({ data, render, slug }) => {
         const { Content } = await render();

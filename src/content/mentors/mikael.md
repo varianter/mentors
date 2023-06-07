@@ -1,6 +1,6 @@
 ---
 experience: 0
-category: utvikler
+category: utvikling
 tags: [frontend, react, open source, podcast, video, browsers]
 email: "mb@variant.no"
 ---

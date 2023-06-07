@@ -1,6 +1,6 @@
 ---
 experience: 0
-category: utvikler
+category: utvikling
 tags: [frontend, react, Universell Utforming]
 email: "ss@variant.no"
 ---

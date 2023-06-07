@@ -1,3 +1,4 @@
 {
-  "tailwindCSS.rootFontSize": 24
+  "tailwindCSS.rootFontSize": 24,
+  "tailwindCSS.experimental.classRegex": ["twl`([^`]*)"]
 }

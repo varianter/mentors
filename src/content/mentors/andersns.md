@@ -1,6 +1,6 @@
 ---
 experience: 0
-category: utvikler
+category: utvikling
 tags: [backend, dotnet]
 email: "ans@variant.no"
 ---

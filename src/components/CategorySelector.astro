@@ -1,0 +1,32 @@
+---
+export interface Props {
+  selected: string;
+}
+
+const { selected } = Astro.props;
+
+const twl = (i: TemplateStringsArray) => i.join("");
+const buttonClass = (id: string) => {
+  const base = twl`border-2 block border-solid px-8 py-2 `;
+  if (selected === id) {
+    return base + twl`border-[#03DAC6] bg-[#9af0e8]`;
+  } else {
+    return base + twl`border-[#FBFAF7] bg-[#F8F6EF]`;
+  }
+};
+---
+
+<nav class="my-8">
+  <ul class="flex justify-center m-auto list-none list-outside bg-">
+    <li><a href="/" class={"rounded-s-3xl " + buttonClass("all")}>Alle</a></li>
+    <li>
+      <a href="/category/design" class={"" + buttonClass("design")}>Design</a>
+    </li>
+    <li>
+      <a
+        href="/category/utvikling"
+        class={"rounded-e-3xl " + buttonClass("utvikling")}>Utvikling</a
+      >
+    </li>
+  </ul>
+</nav>

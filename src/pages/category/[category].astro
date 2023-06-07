@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import EmpolyeeCard from "../../components/EmpolyeeCard.astro";
 import { shuffle } from "../../utils";
+import CategorySelector from "../../components/CategorySelector.astro";
 
 type Params = {
   category: string;
@@ -20,16 +21,16 @@ const mentors = await getCollection(
   </h1>
 
   <div class="max-w-[30rem] mt-12 mx-auto">
-    <p class="mb-4">
-      <a href="/">⬅ Vis alle</a>
-    </p>
-
     <p>
-      Her er en oversikt over alle mentorene innenfor {category}.
+      I Variant tilbyr vi mentoring til andre Varianter og folk utenfor Variant.
+      Dersom du ønsker en sesjon med en av våre mentorer så kan du sende epost
+      direkte og gi informasjon om hva du ønsker mentoring innen.
     </p>
   </div>
 
-  <div class="grid gap-8 grid-flow-row grid-cols-fluid my-32">
+  <CategorySelector selected={category} />
+
+  <div class="grid gap-8 grid-flow-row grid-cols-fluid my-24">
     {
       shuffle(mentors).map(async ({ slug, data, render }) => {
         const { Content } = await render();
