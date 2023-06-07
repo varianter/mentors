@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import EmpolyeeCard from "../../components/EmpolyeeCard.astro";
+import { shuffle } from "../../utils";
+
+type Params = {
+  tag: string;
+};
+const { tag } = Astro.params as Params;
+const mentors = await getCollection("mentors", m => m.data.tags.includes(tag));
+---
+
+<Layout title={"Variant Mentoring"}>
+  <hgroup>
+    <h1 class="text-4xl font-bold text-center my-4 block">
+      <a href="/">Variant Mentoring</a>
+    </h1>
+    <h2 class="text-center my-4 block">Tema: {tag}</h2>
+  </hgroup>
+
+  <p>
+    <a href="/">⬅ Vis alle</a>
+  </p>
+
+  <div class="grid gap-8 grid-flow-row grid-cols-fluid my-32">
+    {
+      shuffle(mentors).map(async ({ data, render }) => {
+        const { Content } = await render();
+        return (
+          <EmpolyeeCard Content={Content} email={data.email} tags={data.tags} />
+        );
+      })
+    }
+  </div>
+</Layout>
