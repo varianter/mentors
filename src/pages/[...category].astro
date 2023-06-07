@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import EmpolyeeCard from "../components/EmpolyeeCard.astro";
 import { shuffle } from "../utils";
@@ -9,6 +9,8 @@ type Params = {
   category: string;
 };
 const { category } = Astro.params as Params;
+
+type Category = CollectionEntry<"mentors">["data"]["category"];
 
 if (category && !["design", "utvikling"].includes(category)) {
   return Astro.redirect("/404");
@@ -31,7 +33,7 @@ const mentors = await getCollection(
     </p>
   </div>
 
-  <CategorySelector selected={category} />
+  <CategorySelector selected={category as Category} />
 
   <div class="grid gap-8 grid-flow-row grid-cols-fluid my-24 justify-center">
     {

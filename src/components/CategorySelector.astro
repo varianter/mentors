@@ -1,6 +1,8 @@
 ---
+import type { CollectionEntry } from "astro:content";
+
 export interface Props {
-  selected?: string;
+  selected?: CollectionEntry<"mentors">["data"]["category"];
 }
 
 const { selected } = Astro.props;
