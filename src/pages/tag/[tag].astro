@@ -12,23 +12,33 @@ const mentors = await getCollection("mentors", m => m.data.tags.includes(tag));
 ---
 
 <Layout title={"Variant Mentoring"}>
-  <hgroup>
-    <h1 class="text-4xl font-bold text-center my-4 block">
-      <a href="/">Variant Mentoring</a>
-    </h1>
-    <h2 class="text-center my-4 block">Tema: {tag}</h2>
-  </hgroup>
+  <h1 class="text-4xl font-bold text-center my-4 block">
+    Finn din mentor innen {tag}
+  </h1>
 
-  <p>
-    <a href="/">⬅ Vis alle</a>
-  </p>
+  <div class="max-w-[30rem] mt-12 mx-auto">
+    <p class="mb-4">
+      <a href="/">⬅ Vis alle</a>
+    </p>
+
+    <p>
+      Her er en oversikt over varianter som gjerne vil være mentor innenfor {
+        tag
+      }.
+    </p>
+  </div>
 
   <div class="grid gap-8 grid-flow-row grid-cols-fluid my-32">
     {
-      shuffle(mentors).map(async ({ data, render }) => {
+      shuffle(mentors).map(async ({ slug, data, render }) => {
         const { Content } = await render();
         return (
-          <EmpolyeeCard Content={Content} email={data.email} tags={data.tags} />
+          <EmpolyeeCard
+            Content={Content}
+            email={data.email}
+            tags={data.tags}
+            slug={slug}
+          />
         );
       })
     }

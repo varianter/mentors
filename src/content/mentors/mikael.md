@@ -2,7 +2,6 @@
 name: Mikael
 experience: 0
 tags: [frontend, react, open source, podcast, video, browsers]
-layout: ../../layouts/MdxLayout.astro
 email: "mb@variant.no"
 ---
 

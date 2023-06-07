@@ -29,6 +29,16 @@ const props = Astro.props;
   >
     <main class={`flex max-w-[75rem] w-full  ${props.class}`}>
       <div class="w-full">
+        <div class="font-gloock text-4xl font-bold text-center my-4 block">
+          <a href="/"
+            ><img
+              src="/variant-bw.svg"
+              class="block max-w-[4rem] m-auto"
+              alt="Variant Mentoring"
+            /></a
+          >
+        </div>
+
         <slot />
       </div>
     </main>

@@ -8,7 +8,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        fluid: "repeat(auto-fit, minmax(25rem, 10fr))",
+        fluid: "repeat(auto-fit, minmax(25rem, 1fr))",
       },
     },
   },

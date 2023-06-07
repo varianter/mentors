@@ -2,7 +2,6 @@
 name: Stina Sofie
 experience: 0
 tags: [design, tjenestedesign]
-layout: ../../layouts/MdxLayout.astro
 email: "ssm@variant.no"
 ---
 

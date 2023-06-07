@@ -4,18 +4,19 @@ import type { AstroComponentFactory } from "astro/dist/runtime/server";
 import { getEmployee } from "../data";
 
 export interface Props {
+  slug: string;
   email: string;
   tags: string[];
   Content: AstroComponentFactory;
 }
 
-const { email, Content, tags } = Astro.props;
+const { email, Content, tags, slug } = Astro.props;
 const employee = await getEmployee(email);
 ---
 
 {
   employee && (
-    <div class="font-sans w-full flex flex-row justify-center pt-20">
+    <div class="font-sans w-full flex flex-row justify-center pt-20 max-w-[35rem] mx-auto">
       <div class="card  max-w-96 mx-auto bg-white flex flex-col shadow-xl hover:shadow">
         <Picture
           src={employee.imageUrl}
@@ -25,7 +26,9 @@ const employee = await getEmployee(email);
           formats={["avif", "png"]}
           class="w-32 mx-auto rounded-full -mt-20 border-8 border-white bg-white"
         />
-        <div class="text-center mt-2 text-3xl font-medium">{employee.name}</div>
+        <h2 class="text-center mt-2 text-3xl font-medium">
+          <a href={`/mentor/${slug}`}>{employee.name}</a>
+        </h2>
         <div class="text-center mt-2 font-light text-sm">
           <a href={`mailto:${email}`}>{email}</a>
         </div>
@@ -35,7 +38,7 @@ const employee = await getEmployee(email);
           <div class="flex py-4 flex-wrap gap-1">
             {tags.map(tag => (
               <a
-                href={`/tags/${tag}`}
+                href={`/tag/${tag}`}
                 class="py-1 px-2 text-sm shadow-md no-underline text-white rounded-full bg-gray-500 hover:bg-gray-400 transition-colors font-sans border-blue">
                 {tag}
               </a>

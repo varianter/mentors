@@ -2,7 +2,6 @@
 name: Anders
 experience: 0
 tags: [backend, dotnet]
-layout: ../../layouts/MdxLayout.astro
 email: "ans@variant.no"
 ---
 

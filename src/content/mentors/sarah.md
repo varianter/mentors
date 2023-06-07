@@ -2,7 +2,6 @@
 name: Sarah
 experience: 0
 tags: [frontend, react, Universell Utforming]
-layout: ../../layouts/MdxLayout.astro
 email: "ss@variant.no"
 ---
 
