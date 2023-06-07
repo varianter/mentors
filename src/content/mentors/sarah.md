@@ -1,6 +1,6 @@
 ---
-name: Sarah
 experience: 0
+category: utvikler
 tags: [frontend, react, Universell Utforming]
 email: "ss@variant.no"
 ---

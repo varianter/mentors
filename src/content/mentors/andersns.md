@@ -1,6 +1,6 @@
 ---
-name: Anders
 experience: 0
+category: utvikler
 tags: [backend, dotnet]
 email: "ans@variant.no"
 ---

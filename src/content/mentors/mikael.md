@@ -1,6 +1,6 @@
 ---
-name: Mikael
 experience: 0
+category: utvikler
 tags: [frontend, react, open source, podcast, video, browsers]
 email: "mb@variant.no"
 ---
