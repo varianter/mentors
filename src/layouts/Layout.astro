@@ -8,7 +8,7 @@ const props = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="min-h-screen">
+<html lang="en" class="h-screen bg-[#F1EDDF] scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -17,16 +17,9 @@ const props = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{props.title}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gloock&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#EDE8D7" />
   </head>
-  <body
-    class="min-h-screen flex justify-center bg-gradient-to-br transition from-[#F1EDDF] to-[#EDE8D7]"
-  >
+  <body class="min-h-screen flex justify-center">
     <main class={`flex max-w-[75rem] w-full  ${props.class}`}>
       <div class="w-full">
         <div class="font-gloock text-4xl font-bold text-center my-4 block">
@@ -38,7 +31,6 @@ const props = Astro.props;
             /></a
           >
         </div>
-
         <slot />
       </div>
     </main>
