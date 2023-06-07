@@ -7,7 +7,7 @@ const mentorCollection = defineCollection({
   schema: z.object({
     tags: z.array(z.string()),
     email: z.string(),
-    category: z.string(),
+    category: z.union([z.literal("design"), z.literal("utvikling")]),
   }),
 });
 
