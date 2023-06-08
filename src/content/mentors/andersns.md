@@ -2,7 +2,7 @@
 experience: 0
 category: utvikling
 name: Anders
-tags: [backend, dotnet]
+tags: [backend, dotnet, devops, security, OAuth, OIDC]
 email: "ans@variant.no"
 ---
 
