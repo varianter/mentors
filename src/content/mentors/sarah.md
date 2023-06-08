@@ -2,7 +2,7 @@
 experience: 0
 category: utvikling
 name: Sarah
-tags: [frontend, react, Universell Utforming]
+tags: [frontend, react, universell utforming]
 email: "ss@variant.no"
 ---
 
