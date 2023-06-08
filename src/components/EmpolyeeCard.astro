@@ -2,16 +2,16 @@
 import { Picture } from "@astrojs/image/components";
 import type { AstroComponentFactory } from "astro/dist/runtime/server";
 import { getEmployee } from "../data";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  slug: string;
-  email: string;
-  tags: string[];
+  slug: CollectionEntry<"mentors">["slug"];
+  data: CollectionEntry<"mentors">["data"];
   Content: AstroComponentFactory;
 }
 
-const { email, Content, tags, slug } = Astro.props;
-const employee = await getEmployee(email);
+const { data, slug, Content } = Astro.props;
+const employee = await getEmployee(data.email);
 ---
 
 {
@@ -29,10 +29,10 @@ const employee = await getEmployee(email);
           class="w-32 mx-auto rounded-full -mt-20 border-8 border-white bg-white"
         />
         <h2 class="text-center mt-2 text-3xl font-medium">
-          <a href={`/mentor/${slug}`}>{employee.name}</a>
+          <a href={`/mentor/${slug}`}>{data.name}</a>
         </h2>
         <div class="text-center mt-2 font-light text-sm">
-          <a href={`mailto:${email}`}>{email}</a>
+          <a href={`mailto:${data.email}`}>{data.email}</a>
         </div>
         <div class="px-6 mt-2 font-light text-sm flex-1 prose">
           <Content />
@@ -42,7 +42,7 @@ const employee = await getEmployee(email);
 
         <div class="flex px-6 py-4 gap-8 max-sm:flex-wrap justify-between items-baseline">
           <div class="flex flex-wrap gap-2 min-w-[10rem]">
-            {tags.map(tag => (
+            {data.tags.map(tag => (
               <a
                 href={`/tag/${tag}`}
                 class="font-bold text-sm underline transition-all hover:drop-shadow-lg font-sans">
@@ -52,7 +52,7 @@ const employee = await getEmployee(email);
           </div>
 
           <a
-            href={`mailto:${email}`}
+            href={`mailto:${data.email}`}
             class="py-2 flex-shrink-0 px-4 shadow-md no-underline text-white rounded-full bg-blue-600 hover:bg-blue-500 font-sans font-semibold transition-colors text-sm border-blue">
             Ta kontakt for mentoring
           </a>

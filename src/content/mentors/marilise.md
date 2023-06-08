@@ -1,6 +1,7 @@
 ---
 experience: 0
 category: design
+name: Mari Lise
 tags: [ux, interaksjonsdesign, tjenestedesign]
 email: "mlsk@variant.no"
 ---

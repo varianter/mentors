@@ -1,6 +1,7 @@
 ---
 experience: 0
 tags: [design, tjenestedesign]
+name: Stina Sofie
 category: design
 email: "ssm@variant.no"
 ---

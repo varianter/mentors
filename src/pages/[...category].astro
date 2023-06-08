@@ -39,14 +39,7 @@ const mentors = await getCollection(
     {
       shuffle(mentors).map(async ({ data, render, slug }) => {
         const { Content } = await render();
-        return (
-          <EmpolyeeCard
-            Content={Content}
-            email={data.email}
-            tags={data.tags}
-            slug={slug}
-          />
-        );
+        return <EmpolyeeCard Content={Content} data={data} slug={slug} />;
       })
     }
   </div>

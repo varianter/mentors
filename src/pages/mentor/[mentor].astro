@@ -37,8 +37,7 @@ const rendered = await mentorItem.render();
   <div class="grid gap-8 grid-flow-row grid-cols-fluid mb-32">
     <EmpolyeeCard
       Content={rendered.Content}
-      email={employee.email}
-      tags={mentorItem.data.tags}
+      data={mentorItem.data}
       slug={mentorItem.slug}
     />
   </div>
