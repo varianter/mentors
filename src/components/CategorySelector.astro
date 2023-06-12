@@ -12,9 +12,9 @@ const twl = (i: TemplateStringsArray) => i.join("");
 const buttonClass = (id: string) => {
   const base = twl`border-2 block border-solid px-8 py-2 `;
   if (actualSelected === id) {
-    return base + twl`border-[#03DAC6] bg-[#9af0e8]`;
+    return base + twl`border-[#03DAC6] bg-[#9af0e8] hover:bg-[#68E9DD]`;
   } else {
-    return base + twl`border-[#FBFAF7] bg-[#F8F6EF]`;
+    return base + twl`border-[#FBFAF7] bg-[#F8F6EF] hover:bg-[#F4F1E7]`;
   }
 };
 ---
