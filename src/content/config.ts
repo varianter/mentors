@@ -8,7 +8,11 @@ const mentorCollection = defineCollection({
     tags: z.array(z.string()),
     email: z.string(),
     name: z.string(),
-    category: z.union([z.literal("design"), z.literal("utvikling")]),
+    category: z.union([
+      z.literal("design"),
+      z.literal("utvikling"),
+      z.literal("ledelse"),
+    ]),
   }),
 });
 
