@@ -1,6 +1,6 @@
 ---
 experience: 0
-category: leadership
+category: ledelse
 name: Linn
 tags: [ledelse]
 email: "linn@variant.no"
