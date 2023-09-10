@@ -9,7 +9,7 @@
   "bracketSameLine": false,
   "jsxSingleQuote": false,
   "pluginSearchDirs": [],
-  "plugins": [],
+  "plugins": ["prettier-plugin-astro"],
   "printWidth": 80,
   "proseWrap": "always",
   "quoteProps": "as-needed",

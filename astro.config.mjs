@@ -3,17 +3,16 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import vercel from "@astrojs/vercel/serverless";
 
-import image from "@astrojs/image";
-
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    react(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
-  ],
+  integrations: [tailwind(), react()],
+   image: {
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'chewiesald2ijhpvmb34c.blob.core.windows.net',
+      pathname: '/employees/**',
+    }],
+  },
   output: "server",
   adapter: vercel(),
 });

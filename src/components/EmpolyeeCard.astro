@@ -1,6 +1,6 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import type { AstroComponentFactory } from "astro/dist/runtime/server";
+import { Image } from "astro:assets";
 import { getEmployee } from "../data";
 import type { CollectionEntry } from "astro:content";
 
@@ -18,14 +18,11 @@ const employee = await getEmployee(data.email);
   employee && (
     <div class="font-sans w-full flex flex-row justify-center pt-20 max-w-[35rem] mx-auto">
       <div class="card  max-w-96 mx-auto bg-white flex flex-col shadow-xl hover:shadow">
-        <Picture
+        <Image
           src={employee.imageUrl}
           alt={employee.name}
-          widths={[200]}
-          aspectRatio="1:1"
           width={200}
           height={200}
-          formats={["avif", "png"]}
           class="w-32 mx-auto rounded-full -mt-20 border-8 border-white bg-white"
         />
         <h2 class="text-center mt-2 text-3xl font-medium">
