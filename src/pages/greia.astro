@@ -1,6 +1,7 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import highfive from "../assets/highfive.jpg";
 ---
 
 <Layout title={"Variant Mentoring - Hva er greia?"}>
@@ -22,13 +23,11 @@ import Layout from "../layouts/Layout.astro";
         med mer oppfølging.
       </p>
 
-      <Picture
+      <Image
         width={361}
         height={234}
-        widths={[361]}
-        aspectRatio="2:1"
         class="block m-auto"
-        src="/highfive.jpg"
+        src={highfive}
         alt="Samarbeid er viktig for læring"
       />
 

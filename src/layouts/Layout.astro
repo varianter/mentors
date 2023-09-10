@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import variantBw from "../assets/variant-bw.svg";
+import { ViewTransitions } from "astro:transitions";
+
 export interface Props {
   title: string;
   class?: string;
@@ -7,7 +11,7 @@ export interface Props {
 const props = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="h-screen bg-[#F1EDDF] scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -20,6 +24,7 @@ const props = Astro.props;
       content="Oversikt over mentorer i Variant som på erfaringer til både interne og eksterne innen design, utvikling og mer."
     />
     <title>{props.title}</title>
+    <ViewTransitions />
 
     <meta name="theme-color" content="#EDE8D7" />
   </head>
@@ -28,8 +33,8 @@ const props = Astro.props;
       <div class="w-full">
         <div class="font-gloock text-4xl font-bold text-center my-4 block">
           <a href="/"
-            ><img
-              src="/variant-bw.svg"
+            ><Image
+              src={variantBw}
               class="block max-w-[4rem] m-auto"
               alt="Variant Mentoring"
               width={302}
